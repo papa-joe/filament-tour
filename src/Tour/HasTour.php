@@ -52,10 +52,10 @@ trait HasTour
 
             if ($steps) {
 
-                if ($request['pathname'] == ($this->getRoute($instance, $class)['path'] ?? '/')) {
+                if ($request['pathname']) {
 
                     $tours[] = [
-                        'route' => $this->getRoute($instance, $class)['path'] ?? '/',
+                        'route' => $request['pathname'],
                         'id' => "tour.{$tour->id}",
                         'alwaysShow' => $tour->alwaysShow,
                         'colors' => [
